@@ -63,7 +63,9 @@ export class OriginalService {
         score = 0;
       }
       localStorage.setItem('score', score.toString());
+      return score;
     }
+
 
     return score;
   }

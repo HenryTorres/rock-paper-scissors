@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GameBoardOriginalComponent } from './../components/game-board-original/game-board-original.component';
 import { ScoreBoardComponent } from './../../../shared/components/score-board/score-board.component';
 import { OriginalModalComponent } from './../../original/components/original-modal/original-modal.component';
@@ -12,11 +12,18 @@ import { OriginalPicked } from '../interfaces/enum';
   templateUrl: './original-page.component.html',
   styleUrl: './original-page.component.css'
 })
-export class OriginalPageComponent {
+export class OriginalPageComponent implements OnInit {
   isModalOpen = false;
   computerTurn: boolean = false;
   orignalPicked: String = OriginalPicked.none;
   score: number = 0;
+
+  ngOnInit(): void {
+    const scoreTemp = localStorage.getItem('score');
+    if (scoreTemp == null) {
+      localStorage.setItem('score', this.score.toString());
+    }
+  }
 
   toggleModal() {
     this.isModalOpen = !this.isModalOpen;
