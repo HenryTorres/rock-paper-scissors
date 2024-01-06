@@ -1,0 +1,31 @@
+<div class="result-container">
+    <div class="you-picked">
+        <p>YOU PICKED</p>
+        <div class="circle {{picked}} {{resultGame=='YOU WIN' ? 'anim': ''}}">
+            <img src="/assets/images/icon-{{picked}}.svg">
+        </div>
+    </div>
+
+    @if (result_done) {
+    <div class="play-again middle">
+        <p>{{resultGame}}</p>
+        <button (click)="againPlay()">PLAY AGAIN</button>
+    </div>
+    }
+
+    <div class="house-picked">
+        <p>THE HOUSE PICKED </p>
+        <div class="circle {{picked_cpu}} {{picked_cpu_done ? '': 'cpu' }} {{resultGame=='YOU LOSE' ? 'anim': ''}}">
+            @if (picked_cpu_done) {
+            <img src="/assets/images/icon-{{picked_cpu}}.svg" alt="rock">
+            }
+        </div>
+    </div>
+</div>
+
+@if (result_done) {
+<div class="play-again bottom">
+    <p>{{resultGame}}</p>
+    <button (click)="againPlay()">PLAY AGAIN</button>
+</div>
+}

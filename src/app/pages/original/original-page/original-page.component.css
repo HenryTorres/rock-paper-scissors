@@ -1,0 +1,48 @@
+.original-container {
+    border: 1px solid green;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+game-board-original {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.rules {
+    display: flex;
+    justify-content: end;
+    margin: 20px;
+}
+
+.rules button {
+    all: unset;
+    background: transparent;
+    border: 1px solid white;
+    padding: .5rem 2rem;
+    border-radius: 10px;
+    color: white;
+}
+
+.rules button:hover {
+    background-color: var(--dark-text);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    result-board {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .original-container {
+        align-items: center;
+    }
+}

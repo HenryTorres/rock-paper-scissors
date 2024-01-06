@@ -1,0 +1,59 @@
+.game-board-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background-image: url('/assets/images/bg-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80%;
+}
+
+.circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 15px solid;
+    background: #fff;
+    position: absolute;
+    animation: background 0.3s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rock {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: var(--rock-gradient-from);
+}
+
+.rock:hover {
+    background: radial-gradient(circle at center, var(--rock-gradient-from), var(--rock-gradient-to));
+    cursor: pointer;
+}
+
+.paper {
+    top: 0;
+    left: 0;
+    border-color: var(--paper-gradient-from);
+}
+
+.paper:hover {
+    background: radial-gradient(circle, var(--paper-gradient-from), var(--paper-gradient-to));
+    cursor: pointer;
+}
+
+.scissors {
+    top: 0;
+    right: 0;
+    border-color: var(--scissors-gradient-from);
+}
+
+.scissors:hover {
+    background: radial-gradient(circle, var(--scissors-gradient-from), var(--scissors-gradient-to));
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {}

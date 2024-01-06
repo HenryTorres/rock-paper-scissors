@@ -1,0 +1,21 @@
+<div class="original-container">
+    <score-board [score]="score" />
+
+    @if (!computerTurn) {
+    <game-board-original (onComputerTurn)="onComputerTurn($event)" />
+    }
+
+    @if (computerTurn) {
+    <result-board [picked]="orignalPicked" (onAgainPlay)="againPlay()" (onScoreChange)="scoreChange($event)" />
+    }
+
+    <div class="rules">
+        <button type="button" (click)="toggleModal()">Rules</button>
+    </div>
+</div>
+
+@if (isModalOpen) {
+<div class="modal">
+    <original-modal (onCloseModal)="closeModal()" />
+</div>
+}

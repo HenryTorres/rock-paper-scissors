@@ -1,0 +1,33 @@
+.score-title {
+    outline: 1px solid #fff;
+    border-radius: 10px;
+    width: 53%;
+    min-width: 350px;
+    padding: 1rem 1rem;
+    margin: 20px auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-title .score {
+    border-radius: 10px;
+    width: 20%;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-title span:first-child {
+    color: var(--score-text);
+    font-size: .7em;
+}
+
+.score-title span:last-child {
+    color: var(--dark-text);
+    font-size: 2.5em;
+    font-weight: 700;
+}

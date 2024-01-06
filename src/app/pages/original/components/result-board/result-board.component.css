@@ -1,0 +1,150 @@
+.result-container {
+    /* border: 1px solid yellow; */
+    margin: 0 auto;
+    width: 53%;
+    height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.you-picked {
+    /* border: 1px solid red; */
+    flex-grow: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.you-picked p,
+.house-picked p {
+    color: white;
+    margin-bottom: 40px;
+    font-size: 1em;
+}
+
+.play-again {
+    /* border: 1px solid red; */
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.play-again p {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.play-again button {
+    all: unset;
+    background: white;
+    border: 1px solid white;
+    padding: .5rem 3.5rem;
+    border-radius: 10px;
+    font-size: .8em;
+    color: var(--dark-text);
+}
+
+.play-again button:hover {
+    cursor: pointer;
+}
+
+.house-picked {
+    /* border: 1px solid red; */
+    flex-grow: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 25px solid;
+    background: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anim {
+    animation: ondas 1s ease-in-out;
+}
+
+@keyframes ondas {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.cpu {
+    border: 1px solid var(--dark-text);
+    background-color: var(--dark-text);
+}
+
+.rock {
+    border-color: var(--rock-gradient-from);
+}
+
+.paper {
+    border-color: var(--paper-gradient-from);
+}
+
+.scissors {
+    border-color: var(--scissors-gradient-from);
+}
+
+.play-again.bottom {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .play-again.middle {
+        display: none;
+    }
+
+    .play-again.bottom {
+        text-align: center;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .circle {
+        width: 150px;
+        height: 150px;
+        border: 15px solid;
+    }
+
+    .cpu {
+        border: 1px solid var(--dark-text);
+        background-color: var(--dark-text);
+    }
+
+    .rock {
+        border-color: var(--rock-gradient-from);
+    }
+
+    .paper {
+        border-color: var(--paper-gradient-from);
+    }
+
+    .scissors {
+        border-color: var(--scissors-gradient-from);
+    }
+}
